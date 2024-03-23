@@ -28,15 +28,10 @@ uninstall:
 	@rm -rf ../build
 	@echo "Uninstall completed!"
 	
-dvi:
-	open our_readme.md
-	
 dist: 
 	@mkdir -p ../dist
 	@cp -R ../build/$(TARGET) ../dist
-	@cp our_readme.md ../dist 
 	@cd ../dist && tar cvzf $(TARGET).tgz *
-	@cd ../dist && rm -rf $(TARGET) our_readme.md
 	@echo "Archive creation completed successfully!"
 
 tests: 3d_viewer.a
